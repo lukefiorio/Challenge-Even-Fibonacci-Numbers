@@ -9,26 +9,11 @@ function _sumFibs(maxFibValue) {
   var sum = 0;
 
   // do your work here
-
-  // method 1;
-  // let fibArr = [0,1];
-  // for (let i = 1; fibArr[i]<=maxFibValue; i++) {
-  //   fibArr.push(fibArr[i-1]+fibArr[i]);
-  //   if (fibArr[i] % 2 === 0 && fibArr[i] <= maxFibValue) {
-  //     sum += fibArr[i];
-  //   }
-  // }
-
-  // method 2;
-  let n1 = 0;
-  let n2 = 1;
-  let nextFibNum = 0;
-  while (nextFibNum <= maxFibValue) {
-    nextFibNum = n1 + n2;
-    n1 = n2;
-    n2 = nextFibNum;
-    if (nextFibNum % 2 === 0 && nextFibNum <= maxFibValue) {
-      sum += nextFibNum;
+  let fibArr = [0,1];
+  for (let i = 1; fibArr[i]<=maxFibValue; i++) {
+    fibArr.push(fibArr[i-1]+fibArr[i]);
+    if (fibArr[i] % 2 === 0 && fibArr[i] <= maxFibValue) {
+      sum += fibArr[i];
     }
   }
 
@@ -40,31 +25,17 @@ function _highestFibonacciNumber(maxFibValue) {
   var highest = 0;
 
   //define your base case, validate your input
+  let fibArr = [0,1];
 
-  // method 1
-  // let fibArr = [0,1];
-
-  // //do your work here
-  // if (maxFibValue > 1) {
-  //   for (let i = 1; fibArr[i]<=maxFibValue; i++) {
-  //     if (fibArr[i] <= maxFibValue) {
-  //       fibArr.push(fibArr[i-1]+fibArr[i]);
-  //     }
-  //   }
-  // }
-  // highest = fibArr[fibArr.length-2];
-
-  // method 2
-  let n1 = 0;
-  let n2 = 1;
-  let nextFibNum = 0;
-  while (nextFibNum <= maxFibValue) {
-    nextFibNum = n1 + n2;
-    n1 = n2;
-    n2 = nextFibNum;
+  //do your work here
+  if (maxFibValue > 1) {
+    for (let i = 1; fibArr[i]<=maxFibValue; i++) {
+      if (fibArr[i] <= maxFibValue) {
+        fibArr.push(fibArr[i-1]+fibArr[i]);
+      }
+    }
   }
-
-  highest = n1;
+  highest = fibArr[fibArr.length-2];
 
   return highest;
 };
