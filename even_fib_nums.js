@@ -16,7 +16,6 @@ function _sumFibs(maxFibValue) {
       sum += fibArr[i];
     }
   }
-
   return sum;
 }
 
@@ -36,7 +35,6 @@ function _highestFibonacciNumber(maxFibValue) {
     }
   }
   highest = fibArr[fibArr.length-2];
-
   return highest;
 };
 
